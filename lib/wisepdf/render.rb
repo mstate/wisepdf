@@ -77,7 +77,7 @@ module Wisepdf
           tf.write render_to_string(:template => opts[:template], :layout => opts[:layout], :locals => opts[:locals])
           tf.flush
           
-          arguments[hf][:html] = "file://#{tf.path}"                        
+          arguments[hf][:html] = "#{tf.path}"                        
         end
       end
       arguments
