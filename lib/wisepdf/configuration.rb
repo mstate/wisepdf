@@ -7,7 +7,7 @@ module Wisepdf
     class << self
       attr_accessor :options
       attr_accessor :wkhtmltopdf
-      attr_accessor :debugging
+      attr_accessor :debug
       
       def wkhtmltopdf
         return @wkhtmltopdf if @wkhtmltopdf.present?
@@ -19,7 +19,7 @@ module Wisepdf
       end
     
       def debug?
-        return @debugging == true
+        return @debug == true
       end 
       
       def configure
