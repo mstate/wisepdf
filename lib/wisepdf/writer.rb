@@ -9,7 +9,7 @@ module Wisepdf
 
     def to_pdf(string, options={})
       invoke = self.command(options).join(' ')   
-      self.log(invoke) if Wisepdf::Configuration.development? || Wisepdf::Configuration.test?
+      self.log(invoke) if Wisepdf::Configuration.development? || Wisepdf::Configuration.test? ||  Wisepdf::Configuration.debug?
 
       result, err = Open3.popen3(invoke) do |stdin, stdout, stderr|
         stdin.write(string)
