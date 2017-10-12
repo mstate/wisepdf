@@ -4,7 +4,7 @@ module Wisepdf
   module Render
     def self.included(base)
       base.class_eval do
-        after_filter :clean_temp_files
+        after_action :clean_temp_files
       end
     end
 
